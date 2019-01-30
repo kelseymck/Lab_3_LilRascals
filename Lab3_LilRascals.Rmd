@@ -1,0 +1,32 @@
+---
+title: "Lab 3"
+author: "Kelsey McKenna"
+date: "1/29/2019"
+output: html_document
+---
+
+
+
+```{r}
+library(tidyverse)
+
+source("http://www.openintro.org/stat/data/cdc.R")
+cdc <- as_tibble(cdc)
+
+ggplot(data=cdc) +
+  geom_jitter(mapping = aes(x = weight, y = height, color= gender)) 
+
+```
+
+
+
+```{r}
+library(tidyverse)
+
+source("http://www.openintro.org/stat/data/cdc.R")
+cdc <- as_tibble(cdc)
+
+ggplot(data=cdc) +
+  geom_point(mapping = aes(x = weight, y = wtdesire, color= gender)) 
+```
+
