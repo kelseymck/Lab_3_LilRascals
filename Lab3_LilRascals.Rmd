@@ -42,6 +42,10 @@ In addition I used a position adjustment to make the scatterplot appear less cro
 ggplot2::ggplot()
 ggplot(data = cdc) + 
   geom_point(mapping = aes(x = weight, y = wtdesire, color = gender, position = "jitter")) +
-  geom_smooth(mapping = aes(x = weight, y = wtdesire))
+  geom_smooth(mapping = aes(x = weight, y = wtdesire)) +
+  ggtitle("Desired Weight vs. Current Weight")
+  xlab("Current Weight(lbs)")
+  ylab("Desired Weight(lbs)")
+  
 
 ```
