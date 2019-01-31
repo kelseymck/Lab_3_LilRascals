@@ -30,3 +30,9 @@ ggplot(data=cdc) +
   geom_point(mapping = aes(x = weight, y = wtdesire, color= gender)) 
 ```
 
+```{r}
+ggplot(data = cdc, mapping = aes(x = as.factor(smoke100), color = gender, fill = gender)) +
+  geom_bar() +
+  xlab("Response") +
+  scale_x_discrete(labels = c("No", "Yes"))
+```
