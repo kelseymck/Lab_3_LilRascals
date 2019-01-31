@@ -25,7 +25,8 @@ source("http://www.openintro.org/stat/data/cdc.R")
 cdc <- as_tibble(cdc)
 
 ggplot(data=cdc) +
-  geom_jitter(mapping = aes(x = weight, y = height, color= gender)) 
+  geom_jitter(mapping = aes(x = weight, y = height, color= gender)) +
+  theme_dark()
 
 ```
 
@@ -60,7 +61,6 @@ I, James Burke, created a plot that compares the people who have smoked 100 time
 
 ```{r}
 library(tidyverse)
-source("http://www.openintro.org/stat/data/cdc.R")
 cdc <- as_tibble(cdc)
 ggplot(data = cdc) +
   geom_bar(mapping = aes(x = as.factor(smoke100), fill = gender), position = position_dodge()) +
