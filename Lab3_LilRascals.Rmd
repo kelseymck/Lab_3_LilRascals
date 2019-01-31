@@ -4,6 +4,13 @@ author: "Kelsey McKenna"
 date: "1/29/2019"
 output: html_document
 ---
+Team Plot: 
+
+```{r}
+ggplot(data = cdc)+
+  geom_point(aes(x = height,y = weight, color = exerany), position = position_dodge(2))+
+  geom_smooth(aes(x = height, y = wtdesire, linetype = gender),color = "red")
+```
 
 Team plot: The question we wish to answer is "How does gender impact health confidence?". 
 This question is extremely interesting and important, because we are curious to see how gender impacts how healthy people are or how healthy people feel. 
@@ -61,3 +68,18 @@ ggplot(data = cdc) +
   ylab("People") +
   scale_x_discrete(labels = c("No", "Yes"))
 ```
+
+
+Individual Plot - Matthew Copeland 
+
+Question: How does Age affect how you view your general health?
+Hypothesis: The people who view they have better health are in the younger age gap of 20 and 30 year olds. 
+I, Matthew Copeland, created a histogram to show the count of people based of their age. The x-axis describes the age and the y-axis describes the number of people in each age group in the study. The color of each bar represent the general health each person view their self as. The hight of each bar describe how many people view their general health relative to their age.
+
+```{r}
+
+ggplot(data = cdc)+
+  geom_histogram(aes(x = age, fill = genhlth), position = "dodge",binwidth = 10)
+
+```
+
