@@ -49,14 +49,14 @@ Question: Is there a difference in the proportion of women who have smoked 100 t
 
 Hypothesis: If I had to guess I would say that more men have smoked 100 times than women, simply because I feel like most of the time I see people smoking, it is men.
 
-I, James Burke, created a plot that compares the people who have smoked 100 times before and those who have not using the bar geom. I used the fill aestetic to show the different proportion of men and women in each bar. The plot shows that the mojority have not smoked 100 times by about 1,000 people out of the 20,000 person sample. Of those who have smoked 100 times men are in the majority by about 500 people, so not by a lot. I also used the xlab/ylab layers to label the x (Response) and y (People) axis more accurately. Finally I labeled the tic marks of the x axis No and Yes, so it was more obvious what the respones were. To do so I also had to make the smoke100 variable a factor insteads of a continuous variable.
+I, James Burke, created a plot that compares the people who have smoked 100 times before and those who have not using the bar geom. I used the fill aestetic along with position_dodge() to show the different proportion of men and women in separate bars of different colors. The plot shows that the mojority have not smoked 100 times by about 1,000 people out of the 20,000 person sample. Of those who have smoked 100 times men are in the majority by about 500 people, so not by a lot. I also used the xlab/ylab layers to label the x (Response) and y (People) axis more accurately. Finally I labeled the tic marks of the x axis No and Yes, so it was more obvious what the respones were. To do so I also had to make the smoke100 variable a factor insteads of a continuous variable.
 
 ```{r}
 library(tidyverse)
 source("http://www.openintro.org/stat/data/cdc.R")
 cdc <- as_tibble(cdc)
 ggplot(data = cdc) +
-  geom_bar(mapping = aes(x = as.factor(smoke100), fill = gender)) +
+  geom_bar(mapping = aes(x = as.factor(smoke100), fill = gender), position = position_dodge()) +
   xlab("Response") +
   ylab("People") +
   scale_x_discrete(labels = c("No", "Yes"))
