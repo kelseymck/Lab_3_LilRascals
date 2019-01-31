@@ -5,7 +5,11 @@ date: "1/29/2019"
 output: html_document
 ---
 
+Team plot: The question we wish to answer is "How does gender impact health confidence?". 
+This question is extremely interesting and important, because we are curious to see how gender impacts how healthy people are or how healthy people feel. 
 
+Individual Plot:  Kelsey McKenna How does weight and height compare between genders?
+I found that on average men are taller and heavier based on my graph which makes sense. Generally, women are less tall, but have more weight than men do for their height. 
 
 ```{r}
 library(tidyverse)
@@ -19,16 +23,6 @@ ggplot(data=cdc) +
 ```
 
 
-
-```{r}
-library(tidyverse)
-
-source("http://www.openintro.org/stat/data/cdc.R")
-cdc <- as_tibble(cdc)
-
-ggplot(data=cdc) +
-  geom_point(mapping = aes(x = weight, y = wtdesire, color= gender)) 
-```
 
 Individual Plot- Shreeya Basrur
 Hypothesis: Is there a correlation between the what the respondents weighed and what they want to weigh? Does gender seem to have an impact on this correlation?
