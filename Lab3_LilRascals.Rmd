@@ -18,7 +18,8 @@ source("http://www.openintro.org/stat/data/cdc.R")
 cdc <- as_tibble(cdc)
 
 ggplot(data=cdc) +
-  geom_jitter(mapping = aes(x = weight, y = height, color= gender)) 
+  geom_jitter(mapping = aes(x = weight, y = height, color= gender)) +
+  theme_dark()
 
 ```
 
