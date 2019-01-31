@@ -30,6 +30,25 @@ ggplot(data=cdc) +
   geom_point(mapping = aes(x = weight, y = wtdesire, color= gender)) 
 ```
 
+Individual Plot- Shreeya Basrur
+Hypothesis: Is there a correlation between the what the respondents weighed and what they want to weigh? Does gender seem to have an impact on this correlation?
+
+
+I, Shreeya Basrur, created a plot showing how current weight and ideal weight are related, and if gender impacts that correlation.The data showed that there is a positive correlation between these variables. As the weight of the responders increases, so does the desired weight described by the responders.This was true of both male and female responders, indicating that gender does not impact the relationship between current and ideal weight. I used the point geom function and adjusted the color of the points to reflect gender. 
+
+In addition I used a position adjustment to make the scatterplot appear less crowded. I also added a line using the smooth geom to reflect the general trend of the correlation.
+
+ggplot2::ggplot()
+```{r}
+ggplot(data = cdc) + 
+  geom_point(mapping = aes(x = weight, y = wtdesire, color = gender, position = "jitter")) +
+  geom_smooth(mapping = aes(x = weight, y = wtdesire)) +
+  ggtitle("Desired Weight vs. Current Weight")
+  xlab("Current Weight(lbs)")
+  ylab("Desired Weight(lbs)")
+  
+
+```
 ```{r}
 ggplot(data = cdc, mapping = aes(x = as.factor(smoke100), color = gender, fill = gender)) +
   geom_bar() +
