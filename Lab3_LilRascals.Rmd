@@ -4,18 +4,22 @@ author: "Kelsey McKenna"
 date: "1/29/2019"
 output: html_document
 ---
-Team Plot: 
+Team plot - Shreeya Basrur, Kelsey McKenna, Matthew Copeland, James Burke
+Question: Based on the height and weight of an individual, as well as if they exercise. Does their desired weight differ between genders?
+The idea behind the question is to see how self confidence in one's body vary based on their gender, their height and/or their weight in mind. 
+Through looking at the data we can see that there is a cluster of data with varying blue and black dots, which suggests that a persons height and weight does not clearly affect how much they exercisd. But the line that flows through the cluster shows that generally females desired weight is lower than males which suggests that gender influences body confidence. Body confidence does not seem to be influenced by your body type or how much exercise, however based on the data female's body confidence may generally be lower based on their desired weight. Our best recomendation for this would be to take steps in society away from forcing the idealic women's body on females at all ages. This tends to skew what women desire to look like themselves, putting pressure on themselves to conform to that image. A concrete recommendation would be to start deversifying the representation of women in the media, so that females can see and look up to a more realistic figure.
 
+What everybody did
+Shreeya Basrur: Came up with the central question and created her plot that compares the current weight to the desired weight of males and females.
+Kelsey McKenna: Wrote why the central question was so important and created her plot that compares the weight and height of men and women.
+Matthew Copeland: Made the group plot and wrote the conclusion, along with his own plot relating general health to age.
+James Burke: Added to the conclusion, made a recomendation and created his plot that compared the smoking habits of males and females.
 ```{r}
 ggplot(data = cdc)+
-  geom_point(aes(x = height,y = weight, color = exerany), position = position_dodge(2))+
+  geom_point(aes(x = height,y = weight, color = exerany))+
   geom_smooth(aes(x = height, y = wtdesire, linetype = gender),color = "red")
 ```
 
-Team plot: The question we wish to answer is:
-Based on the height and weight of an individual, as well as if they exercise. Does their desired weight differ between genders?
-The idea behind the question is to see how self confidence in one's body vary between gender with their height and weight in mind. 
-Through looking at the data we can see that there is a cluster of data at with varying blue and black dots. The cluster prove that a persons height and weight don't clearly prove that there is a certain body type for each gender. But the line that flows through the cluster show that females weight desired is lower than males which proves that gender influences body confidence. Body confidence isnt influenced by your shape and how much exercise, based on the data females generally desire a smaller weight more than males. 
 
 
 Individual Plot:  Kelsey McKenna 
@@ -39,7 +43,6 @@ ggplot(data=cdc) +
 Individual Plot- Shreeya Basrur
 Hypothesis: Is there a correlation between the what the respondents weighed and what they want to weigh? Does gender seem to have an impact on this correlation?
 
-
 I, Shreeya Basrur, created a plot showing how current weight and ideal weight are related, and if gender impacts that correlation.The data showed that there is a positive correlation between these variables. As the weight of the responders increases, so does the desired weight described by the responders.This was true of both male and female responders, indicating that gender does not impact the relationship between current and ideal weight. I used the point geom function and adjusted the color of the points to reflect gender. 
 
 In addition I used a position adjustment to make the scatterplot appear less crowded. I also added a line using the smooth geom to reflect the general trend of the correlation.
@@ -56,6 +59,8 @@ ggplot(data = cdc) +
 
 ```
 
+
+
 Individual Plot - James Burke
 Question: Is there a difference in the proportion of women who have smoked 100 times and the proportion of men who have smoked 100?
 
@@ -68,10 +73,12 @@ library(tidyverse)
 cdc <- as_tibble(cdc)
 ggplot(data = cdc) +
   geom_bar(mapping = aes(x = as.factor(smoke100), fill = gender), position = position_dodge()) +
-  xlab("Response") +
+  xlab("Whether they have smoked 100 times") +
   ylab("People") +
-  scale_x_discrete(labels = c("No", "Yes"))
+  scale_x_discrete(labels = c("No", "Yes"))+
+  ggtitle("Male vs. Female Smokers") 
 ```
+
 
 
 Individual Plot - Matthew Copeland 
