@@ -12,10 +12,14 @@ ggplot(data = cdc)+
   geom_smooth(aes(x = height, y = wtdesire, linetype = gender),color = "red")
 ```
 
-Team plot: The question we wish to answer is "How does gender impact health confidence?". 
-This question is extremely interesting and important, because we are curious to see how gender impacts how healthy people are or how healthy people feel. 
+Team plot: The question we wish to answer is:
+Based on the height and weight of an individual, as well as if they exercise. Does their desired weight differ between genders?
+The idea behind the question is to see how self confidence in one's body vary between gender with their height and weight in mind. 
+Through looking at the data we can see that there is a cluster of data at with varying blue and black dots. The cluster prove that a persons height and weight don't clearly prove that there is a certain body type for each gender. But the line that flows through the cluster show that females weight desired is lower than males which proves that gender influences body confidence. Body confidence isnt influenced by your shape and how much exercise, based on the data females generally desire a smaller weight more than males. 
 
-Individual Plot:  Kelsey McKenna How does weight and height compare between genders?
+
+Individual Plot:  Kelsey McKenna 
+Question: How does weight and height compare between genders?
 I found that on average men are taller and heavier based on my graph which makes sense. Generally, women are less tall, but have more weight than men do for their height. 
 
 ```{r}
